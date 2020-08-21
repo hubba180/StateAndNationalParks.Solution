@@ -19,16 +19,17 @@ namespace StateAndNationalParksAPI.Controllers
         }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<NationalPark>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _db.NationalParks.ToList();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<NationalPark> Get(int id)
         {
-            return "value";
+            var Result = _db.NationalParks.FirstOrDefault(c => c.NationalParkId == id);
+            return Result;
         }
 
         // POST api/values
