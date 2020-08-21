@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using StateAndNationalParksAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 
 namespace StateAndNationalParksAPI.Controllers
@@ -23,6 +24,12 @@ namespace StateAndNationalParksAPI.Controllers
         {
             return _db.NationalParks.ToList();
         }
+        [HttpGet("search")]
+        public ActionResult<IEnumerable<NationalPark>> GetSearch(string name)
+        {
+            var query = _db.NationalParks.AsQueryable();
+            return query.Where(c => c.Name == name).ToList();
+        }
 
         // GET api/values/5
         [HttpGet("{id}")]
@@ -34,20 +41,28 @@ namespace StateAndNationalParksAPI.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] NationalPark value)
         {
+            _db.NationalParks.Add(value);
+            _db.SaveChanges();
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] NationalPark value)
         {
+            value.NationalParkId = id;
+            _db.Entry(value).State = EntityState.Modified;
+            _db.SaveChanges();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var parkToDelete = _db.NationalParks.FirstOrDefault(entry => entry.NationalParkId == id);
+            _db.NationalParks.Remove(parkToDelete);
+            _db.SaveChanges();
         }
     }
 }
