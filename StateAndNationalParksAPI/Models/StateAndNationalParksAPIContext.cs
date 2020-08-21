@@ -72,7 +72,7 @@ namespace StateAndNationalParksAPI.Models
         new NationalPark { Name = "Mount Rainier", State = "Washington", Region = "Pacific Northwest" },
         new NationalPark { Name = "North Cascades", State = "Washington", Region = "Pacific Northwest" },
         new NationalPark { Name = "Olympic", State = "Washington", Region = "Pacific Northwest" },
-        new NationalPark { Name = "Grand Teton", State = "Washington", Region = "Northwest" },
+        new NationalPark { Name = "Grand Teton", State = "Washington", Region = "Northwest" }
       );
     builder.Entity<StatePark>()
       .HasData(
