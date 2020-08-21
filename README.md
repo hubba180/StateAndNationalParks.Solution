@@ -88,9 +88,11 @@ _by default these are set to user:root and an empty password. if you are unsure,
 
 <br>
 
-## **API Documentation**
+<h1 align="center"><strong>API Documentation</strong></h1>
 
-### Routing Conventions:
+### **Routing Conventions:**
+
+### The following end points have been tailored to the National Parks. In order to access state park objects,
 
   * *Method* GET: ```http://localhost:5000/api/nationalpark```
       * Returns a list of the first 25 National Parks
@@ -125,15 +127,28 @@ _by default these are set to user:root and an empty password. if you are unsure,
         "region": "Southwest"
       }
       ```
-      * *Method* POST: ```http://localhost:5000/api/nationalpark```
-      * Returns a single object based on Id
+      * *Method* POST: ```http://localhost:5000/api/nationalpark...```
+      * Posts a new national park object to the database
       * Json Response Format: 
       ```
       {
-        "nationalParkId": 25,
-        "name": "Rocky Mountain",
-        "state": "Colorado",
-        "region": "Southwest"
+        "NationalParkId": ##
+        "Name": "Sample"
+        "State": "Sample State"
+        "Region": "Sample Region"
       }
       ```
+      * *Method* PUT: ```http://localhost:5000/api/nationalpark/{id}```
+      * Upadates an old entry with new information
+      * Json Response Format: 
+      ```
+      {
+        "NationalParkId": ##
+        "Name": "Updated Name"
+        "State": "Updated State"
+        "Region": "Updated Region"
+      }
+      ```
+      * *Method* DELETE: ```http://localhost:5000/api/nationalpark/{id}```
+      * Deletes a national park object from the database
 
