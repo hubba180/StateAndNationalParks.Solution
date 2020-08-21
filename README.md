@@ -92,7 +92,7 @@ _by default these are set to user:root and an empty password. if you are unsure,
 
 ### **Routing Conventions:**
 
-### The following end points have been tailored to the National Parks. In order to access state park objects,
+### The following end points have been tailored to the National Parks. In order to access state park objects, see description below
 
   * *Method* GET: ```http://localhost:5000/api/nationalpark```
       * Returns a list of the first 25 National Parks
@@ -132,10 +132,10 @@ _by default these are set to user:root and an empty password. if you are unsure,
       * Json Response Format: 
       ```
       {
-        "NationalParkId": ##
-        "Name": "Sample"
-        "State": "Sample State"
-        "Region": "Sample Region"
+        "nationalParkId": ##
+        "name": "Sample"
+        "state": "Sample State"
+        "region": "Sample Region"
       }
       ```
       * *Method* PUT: ```http://localhost:5000/api/nationalpark/{id}```
@@ -143,12 +143,46 @@ _by default these are set to user:root and an empty password. if you are unsure,
       * Json Response Format: 
       ```
       {
-        "NationalParkId": ##
-        "Name": "Updated Name"
-        "State": "Updated State"
-        "Region": "Updated Region"
+        "nationalParkId": ##
+        "name": "Updated Name"
+        "state": "Updated State"
+        "region": "Updated Region"
       }
       ```
       * *Method* DELETE: ```http://localhost:5000/api/nationalpark/{id}```
       * Deletes a national park object from the database
+
+      ### **State Park Routes:**
+      Access to the State Park database uses the same routing convention and functionality as the National Parks database. URLs must replace "nationalpark" with "statepark", see example below: 
+
+      * *Method* GET: ```http://localhost:5000/api/statepark/search/?name=goose lake state recreation area```
+      * Returns a search result based on park name
+      * Json Response Format: 
+      ```
+      {
+        "stateParkId": 1,
+        "name": "Goose Lake State Recreation Area",
+        "state": "Oregon",
+        "county": "Lakeview"
+      }
+      ```
+      ## **Returning data templates**
+
+      **State Park Objects**
+      | Key | Value | 
+      | :-------------     | :------------- | 
+      | StateParkId | int  |  
+      | Name | String |
+      | State | String |
+      | County | String |
+      <br>
+      
+      **National Park Objects**
+      | Key | Value | 
+      | :-------------     | :------------- | 
+      | NationalParkId | int  |  
+      | Name | String |
+      | State | String |
+      | Region | String |
+
 
