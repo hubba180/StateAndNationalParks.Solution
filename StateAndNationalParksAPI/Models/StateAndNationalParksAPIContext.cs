@@ -75,7 +75,50 @@ namespace StateAndNationalParksAPI.Models
         new NationalPark { Name = "Grand Teton", State = "Washington", Region = "Northwest" },
       );
     builder.Entity<StatePark>()
-      .HasData();
+      .HasData(
+        new StatePark { Name = "Goose Lake State Recreation Area", State = "Oregon", County = "Lakeview"},
+        new StatePark { Name = "Frechglen Hotel State Heritage Site", State = "Oregon", County = "Burns"},
+        new StatePark { Name = "Ontario State Recreation Site", State = "Oregon", County = "Ontario"},
+        new StatePark { Name = "Farewell Bend State Recreation Area", State = "Oregon", County = "Ontario"},
+        new StatePark { Name = "Kam Wah Chung State Heritage Site", State = "Oregon", County = "John Day"},
+        new StatePark { Name = "Unity Lake State Recreation Site", State = "Oregon", County = "John Day"},
+        new StatePark { Name = "Succor Creek State Natural Area", State = "Oregon", County = "Nyssa"},
+        new StatePark { Name = "Lake Owyhee State Park", State = "Oregon", County = "Nyssa"},
+        new StatePark { Name = "Catherine Creek State Park", State = "Oregon", County = "Union"},
+        new StatePark { Name = "Alta Lake State Park", State = "Washington", County = "Okanogan"},
+        new StatePark { Name = "Anderson Lake State Park", State = "Washington", County = "Jefferson"},
+        new StatePark { Name = "Battle Ground Lake State Park", State = "Washington", County = "Clark"},
+        new StatePark { Name = "Bay View State Park", State = "Washington", County = "Skagit"},
+        new StatePark { Name = "Beacon Rock State Park", State = "Washington", County = "Skamania"},
+        new StatePark { Name = "Belfair State Park", State = "Washington", County = "Mason"},
+        new StatePark { Name = "Birch Bay", State = "Washington", County = "Whatcom"},
+        new StatePark { Name = "Blind Island State Park", State = "Washington", County = "San Juan"},
+        new StatePark { Name = "Albany State Marine Reserve", State = "California", County = "Alameda"},
+        new StatePark { Name = "Ahjumawi Lava Springs State Park", State = "California", County = "Shasta"},
+        new StatePark { Name = "Anderson Marsh State Historic Park", State = "California", County = "Lake"},
+        new StatePark { Name = "Andrew Molera State Park", State = "California", County = "Monterey"},
+        new StatePark { Name = "Angel Island State Park", State = "California", County = "Marin"},
+        new StatePark { Name = "Antelope Valley California Poppy Reserve", State = "California", County = "Los Angeles"},
+        new StatePark { Name = "Burton Creek State Park", State = "California", County = "Placer"},
+        new StatePark { Name = "Butano State Park", State = "California", County = "San Mateo"},
+        new StatePark { Name = "Butte City Project", State = "California", County = "Butte"},
+        new StatePark { Name = "Calaveras Big Trees State Park", State = "California", County = "Calaveras"},
+        new StatePark { Name = "California Citrus State Historic Park", State = "California", County = "Riverside"},
+        new StatePark { Name = "California State Marine Park", State = "California", County = "San Luis Obispo"},
+        new StatePark { Name = "Cardiff State Beach", State = "California", County = "San Diego"},
+        new StatePark { Name = "Castle Crags State Park", State = "California", County = "Shasta"},
+        new StatePark { Name = "Caswell Memorial State Park", State = "California", County = "San Joaquin"},
+        new StatePark { Name = "China Camp State Park", State = "California", County = "Marin"},
+        new StatePark { Name = "Lake Elemo State Park", State = "Montana", County = "Yellowstone"},
+        new StatePark { Name = "Lake Mary Ronan State Park", State = "Montana", County = "Lake"},
+        new StatePark { Name = "Lewis and Clark Caverns State Park", State = "Montana", County = "Jefferson"},
+        new StatePark { Name = "Lone Pine State Park", State = "Montana", County = "Flathead"},
+        new StatePark { Name = "Lost Creek State Park", State = "Montana", County = "Deer Lodge"},
+        new StatePark { Name = "Milltown State Park", State = "Montana", County = "Missoula"},
+        new StatePark { Name = "Missouri Headwaters State Park", State = "Montana", County = "Gallatin"},
+        new StatePark { Name = "Salmon Lake State Park", State = "Montana", County = "Missoula"},
+        new StatePark { Name = "Spring Meadow Lake State Park", State = "Montana", County = "Lewis and Clark"}
+      );
     }
   }
 }
