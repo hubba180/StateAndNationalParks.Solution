@@ -20,9 +20,14 @@ namespace StateAndNationalParksAPI.Controllers
         }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<NationalPark>> Get()
+        public async Task<IActionResult> Get([FromQuery] UrlQuery urlQuery)
         {
-            return _db.NationalParks.ToList();
+            var validUrlQuery = new UrlQuery(urlQuery.PageNumber, urlQuery.PageSize);
+            var pagedData = _db.NationalParks
+                .OrderBy(thing => thing.NationalParkId)
+                .Skip((validUrlQuery.PageNumber - 1) * validUrlQuery.PageSize)
+                .Take(validUrlQuery.PageSize);
+            return Ok(pagedData);
         }
         [HttpGet("search")]
         public ActionResult<IEnumerable<NationalPark>> GetSearch(string name)
