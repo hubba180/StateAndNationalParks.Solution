@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using StateAndNationalParksAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace StateAndNationalParksAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class NationalParkController : ControllerBase
     {
+        private StateAndNationalParksAPIContext _db;
+
+        public NationalParkController(StateAndNationalParksAPIContext db)
+        {
+        _db = db;
+        }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()

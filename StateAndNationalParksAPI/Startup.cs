@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using StateAndNationalParksAPI.Models;
 
 
-namespace StateAndNationalParksAPI.Solution
+namespace StateAndNationalParksAPI
 {
     public class Startup
     {
