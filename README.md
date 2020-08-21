@@ -90,12 +90,50 @@ _by default these are set to user:root and an empty password. if you are unsure,
 
 ## **API Documentation**
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Available API Routes:
+### Routing Conventions:
 
-  * POST: http://<span></span>localhost:5000/api/nationalpark...
+  * *Method* GET: ```http://localhost:5000/api/nationalpark```
       * Returns a list of the first 25 National Parks
-      * Parameters:
-          - Name: "Example"
-          - State: "Example State"
-          - Region: "Example Region"
+      * Json Response Format: 
+      ```
+      {
+        "NationalParkId": ##
+        "Name": "Example"
+        "State": "Example State"
+        "Region": "Example Region"
+      }
+      ```
+  * *Method* GET: ```http://localhost:5000/api/nationalpark/search/?name=Glacier```
+      * Returns a search result based on park name
+      * Json Response Format: 
+      ```
+      {
+        "nationalParkId": 35,
+        "name": "Glacier",
+        "state": "Montana",
+        "region": "Northwest"
+      }
+      ```
+      * *Method* GET: ```http://localhost:5000/api/nationalpark/25```
+      * Returns a single object based on Id
+      * Json Response Format: 
+      ```
+      {
+        "nationalParkId": 25,
+        "name": "Rocky Mountain",
+        "state": "Colorado",
+        "region": "Southwest"
+      }
+      ```
+      * *Method* POST: ```http://localhost:5000/api/nationalpark```
+      * Returns a single object based on Id
+      * Json Response Format: 
+      ```
+      {
+        "nationalParkId": 25,
+        "name": "Rocky Mountain",
+        "state": "Colorado",
+        "region": "Southwest"
+      }
+      ```
 
